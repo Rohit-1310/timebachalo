@@ -6,7 +6,7 @@ export interface Task {
   component: string;
   focus: string;
   tools: string;
-  priority: 'High' | 'Medium';
+  priority: 'Low' | 'High' | 'Medium';
   status: 'Not Started' | 'In Progress' | 'Completed';
   notes: string;
 }
