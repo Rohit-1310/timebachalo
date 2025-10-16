@@ -5,7 +5,7 @@ const dashboards = [
   {
     id: 'finance',
     title: 'Finance & Banking Dashboard',
-    description: 'Blue theme with KPIs, charts, customer updates, articles, and policies',
+    description: 'Comprehensive financial case management with KPIs, charts, filters, and data tables',
     color: 'from-blue-500 to-cyan-500',
     icon: '💼',
     href: '/dashboards/finance',
@@ -20,19 +20,27 @@ const dashboards = [
   },
   {
     id: 'minimalist',
-    title: 'Minimalist Dashboard',
-    description: 'Clean white theme with KPIs, charts, and activity feed - focused and minimal',
-    color: 'from-slate-500 to-slate-700',
-    icon: '📊',
+    title: "Analyst's Dashboard (Dark Mode)",
+    description: 'Dark theme with cyan accents, interactive charts, and transaction tables',
+    color: 'from-cyan-500 to-blue-500',
+    icon: '🌙',
     href: '/dashboards/minimalist',
   },
   {
-    id: 'dark',
-    title: "Analyst's Dashboard (Dark Mode)",
-    description: 'Dark theme with cyan accents, tables, and status tracking for analysts',
-    color: 'from-cyan-500 to-blue-500',
-    icon: '🌙',
-    href: '/dashboards/dark',
+    id: 'sales',
+    title: 'Sales Analytics Dashboard',
+    description: 'Sales metrics with 7+ chart types including area, pie, and line charts',
+    color: 'from-orange-500 to-red-500',
+    icon: '📊',
+    href: '/dashboards/sales',
+  },
+  {
+    id: 'hr',
+    title: 'HR Analytics Dashboard',
+    description: 'Employee insights with department distribution, hiring trends, and attrition rates',
+    color: 'from-indigo-500 to-blue-500',
+    icon: '👥',
+    href: '/dashboards/hr',
   },
 ];
 
@@ -44,12 +52,12 @@ export default function DashboardHub() {
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Dashboard Examples</h1>
           <p className="text-xl text-gray-600">
-            Explore 4 different dashboard designs for your fintech platform
+            Explore 6 different dashboard designs for your fintech and business platform
           </p>
         </div>
 
         {/* Dashboard Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {dashboards.map((dashboard) => (
             <Link key={dashboard.id} href={dashboard.href}>
               <div className="group cursor-pointer h-full">
@@ -64,7 +72,7 @@ export default function DashboardHub() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                       {dashboard.title}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
