@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
@@ -14,8 +15,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo/Brand */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
-              TB
+            <div className="w-8 h-8 relative">
+              <Image
+                src="/logo.jpeg"
+                alt="TimeBachalo Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
             <span className="font-bold text-lg text-gray-900">TimeBachalo</span>
           </Link>
@@ -24,19 +31,17 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="/"
-              className={`font-medium transition-colors ${
-                isActive('/') ? 'text-blue-600' : 'text-gray-600 hover:text-gray-900'
-              }`}
+              className={`font-medium transition-colors ${isActive('/') ? 'text-blue-600' : 'text-gray-600 hover:text-gray-900'
+                }`}
             >
               Roadmap
             </Link>
             <Link
               href="/dashboards"
-              className={`font-medium transition-colors ${
-                pathname.startsWith('/dashboards')
+              className={`font-medium transition-colors ${pathname.startsWith('/dashboards')
                   ? 'text-blue-600'
                   : 'text-gray-600 hover:text-gray-900'
-              }`}
+                }`}
             >
               Dashboards
             </Link>
